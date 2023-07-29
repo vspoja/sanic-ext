@@ -349,7 +349,7 @@ def _parse_allow_headers(value: str) -> FrozenSet[str]:
                 value,
                 (list, set, frozenset, tuple),
             )
-            else value.split(",")
+            else [header.strip() for header in value.split(",")]
         )
         if value
         else tuple()
